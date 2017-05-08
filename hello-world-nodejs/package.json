@@ -1,0 +1,29 @@
+{
+  "name": "hello-world-webui",
+  "version": "1.0.0",
+  "description": "A web ui project for learning node-js (hello-world level)",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/srikarrao/hello-world-nodejs.git"
+  },
+  "keywords": [
+    "hello-world",
+    "nodejs",
+    "webui"
+  ],
+  "author": "srikarrao",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/srikarrao/hello-world-nodejs/issues"
+  },
+  "homepage": "https://github.com/srikarrao/hello-world-nodejs#readme",
+  "devDependencies": {
+    "dotenv": "^4.0.0",
+    "istanbul": "^0.4.5",
+    "mocha": "^3.3.0"
+  }
+}
