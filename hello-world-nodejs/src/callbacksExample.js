@@ -4,7 +4,7 @@ function main(req,callback){
 };
 
 main(0,function(i){
-  for(var x = i; x <100;x++){
+  for(var x = i; x <10;x++){
     console.log(x);
   }
 }
