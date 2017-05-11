@@ -1,6 +1,6 @@
 function myApiFunc(callback) {
     try {
-      doSomeAsynchronousOperation(function (err) {
+      doSomeAsynchronousOperation((err) => {
           console.log(x); // error occurs here
               if (err)
                   throw (err);
