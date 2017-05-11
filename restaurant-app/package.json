@@ -4,8 +4,9 @@
   "description": "Restaurant app using MEAN stack (MongoDB-Express-AngularJS-NodeJS)",
   "main": "www.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon app.js"
+    "test": "mocha",
+    "dev": "nodemon ./src/app.js",
+    "dev2": "nodemon ./bin/www.js"
   },
   "keywords": [
     "MEAN",
