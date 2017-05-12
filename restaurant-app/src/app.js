@@ -1,5 +1,6 @@
 var statusRouter = require('./routers/statusRouter');
 var bookingRouter = require('./routers/bookingRouter');
+var pdfDisplayRouter = require('./routers/pdfDisplayRouter');
 var express = require('express');
 var app = express();
 var logger = require('./utils/logging.js');
@@ -26,5 +27,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(logger.logMessage());
 app.use('/table-booking', bookingRouter);
 app.use('/booking-details', statusRouter);
+app.use('/pdf-details', pdfDisplayRouter);
 
 app.listen(3000);
