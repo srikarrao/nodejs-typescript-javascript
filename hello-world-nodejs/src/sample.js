@@ -1,11 +1,11 @@
 var events = require('events');
 const myEmitter = new events.EventEmitter();
 
-myEmitter.on('event', (a, b) => {
+myEmitter.on('fire', (a, b) => {
   setImmediate(() => {
     console.log('this happens asynchronously '+a+" : "+b);
   });
     console.log('this happens asynchronously '+b+" : "+a);
 });
-myEmitter.emit('event', 'key', 'value');
+myEmitter.emit('fire', 'key', 'value');
 console.log("Running EventEmitter");
