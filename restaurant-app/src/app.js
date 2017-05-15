@@ -1,3 +1,4 @@
+// execution command: npm run dev
 var statusRouter = require('./routers/statusRouter');
 var bookingRouter = require('./routers/bookingRouter');
 var pdfDisplayRouter = require('./routers/pdfDisplayRouter');
