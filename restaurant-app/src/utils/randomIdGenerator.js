@@ -1,5 +1,6 @@
 var Collections = require('typescript-collections');
 var idSet = new Collections.Set();
+var logger = require('./logging');
 
 function randomInt (low, high) {
   return Math.floor(Math.random() * (high - low) + low);
@@ -11,7 +12,7 @@ var getRandomNumber = function(err,reqTime){
     idSet.add(bookingId);
     return bookingId;
   }catch(ex){
-    console.error('Exception occurred generating random number!');
+    logger.logError('Exception occurred generating random number: '+ex.message);
   }
 }
 

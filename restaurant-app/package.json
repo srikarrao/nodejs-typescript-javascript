@@ -5,7 +5,7 @@
   "main": "www.js",
   "scripts": {
     "test": "mocha",
-    "dev": "nodemon ./src/cluster.js",
+    "dev": "SET NODE_ENV=development && nodemon ./bin/www.js",
     "dev2": "nodemon ./bin/www.js"
   },
   "keywords": [

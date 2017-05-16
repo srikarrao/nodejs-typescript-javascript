@@ -14,25 +14,19 @@ if (!fs.existsSync(dataDir)) {
   fs.mkdirSync(dataDir);
 }
 const tsFormat = () => (new Date()).toLocaleTimeString();
-
-const errorlogger = new (winston.Logger)({
+const logger = new (winston.Logger)({
   transports: [
+    /**new (winston.transports.File)({
+      name: 'text',
+      filename: `${errorDir}/results.log`,
+      timestamp: tsFormat,
+      level: 'debug'
+    }),**/
     new (winston.transports.File)({
-    name: 'text',
-    filename: `${errorDir}/errors.log`,
-    timestamp: tsFormat,
-    level: 'error'
-    }),
-  ]
-});
-
-const dataLogger = new (winston.Logger)({
-  transports: [
-      new (winston.transports.File)({
       name: 'text',
       filename: `${dataDir}/info.log`,
       timestamp: tsFormat,
-      level: 'info'
+      level: 'error'
     })
   ]
 });
@@ -43,28 +37,30 @@ var logError = function(err, msg){
   if(err){
     console.error('Exception occurred logging in logError');
   }
-  errorlogger.error('Exception occurred '+msg);
+  logger.error('Exception occurred '+msg);
 }
 
 var logWarn = function(err, msg){
   if(err){
     console.error('Exception occurred logging in logWarn');
   }
-  dataLogger.warn(msg);
+  logger.warn(msg);
 }
 
 var logInfo = function(err, msg){
   if(err){
     console.error('Exception occurred logging in logInfo');
   }
-  dataLogger.info(msg);
+  logger.error('Error '+msg);
+  logger.debug('Debug '+msg);
+  logger.info(msg);
 }
 
 var logDebug = function(err, msg){
   if(err){
     console.error('Exception occurred logging in logDebug');
   }
-  dataLogger.debug(msg);
+  logger.debug(msg);
 }
 
 module.exports={logError,logWarn,logInfo,logDebug};
