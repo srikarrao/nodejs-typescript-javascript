@@ -5,11 +5,24 @@ var pdfDisplayRouter = require('./routers/pdfDisplayRouter');
 var express = require('express');
 var app = express();
 var requestInterceptor = require('./utils/requestInterceptor.js');
-var responseInterceptor = require('./utils/responseInterceptor.js');
 var bodyParser = require('body-parser');
 var helmet = require('helmet');
 var session = require('cookie-session');
 var expiryDate = new Date(Date.now() + 60 * 60 * 1000);
+var fs = require('fs');
+var rfs = require('rotating-file-stream');
+var morgan = require('morgan');
+var accessDirectory = './logs/access/';
+// ensure log directory exists
+fs.existsSync(accessDirectory) || fs.mkdirSync(accessDirectory);
+
+// create a rotating write stream
+var accessLogStream = rfs('access.log', {
+  interval: '1d', // rotate daily
+  path: accessDirectory
+});
+
+app.use(morgan('dev', {stream: accessLogStream}));
 
 app.use(session({
   name: 'session',
