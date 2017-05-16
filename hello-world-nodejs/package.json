@@ -27,7 +27,10 @@
     "mocha": "^3.3.0"
   },
   "dependencies": {
+<<<<<<< HEAD
     "redis": "^2.7.1",
+=======
+>>>>>>> c59cbcb3740f7ed5cafa8a035ddca1c7ab37363e
     "winston": "^2.3.1"
   }
 }
