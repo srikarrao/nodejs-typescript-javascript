@@ -3,10 +3,10 @@ var bookingRouter = express.Router()
 var bookingBO = require('../business/bookingBO');
 
 bookingRouter.post('/makeBooking',function (req, res) {
-  bookingBO.bookTable(req);
-  console.log("Name in json is: "+req.body.name);
+  id = bookingBO.bookTable(req);
+  console.log('Message:Booking successfully completed!');
   res.setHeader('Content-Type', 'application/json');
-  res.send({'Message':'Booking successfully completed!'})
+  res.send({'Message':'Booking successfully completed! Track booking using '+id})
 });
 
 module.exports = bookingRouter;
