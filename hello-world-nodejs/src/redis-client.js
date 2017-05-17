@@ -7,10 +7,14 @@ client.on('connect', function() {
     console.log('connected');
 });
 
-client.set('framework', 'AngularJS', function(err, reply) {
+var json = "{'data':[{'stuff':[{'onetype':[{'id':1,'name':'John Doe'},{'id':2,'name':'Don Joeh'}]},{'othertype':[{'id':2,'company':'ACME'}]}]},{'otherstuff':[{'thing':[[1,42],[2,2]]}]}]}";
+
+client.set('json', json, function(err, reply) {
   console.log(reply);
 });
 
-client.get('framework', function(err, reply) {
-    console.log(reply);
+client.get('json', function(err, reply) {
+  console.log(reply);
 });
+
+console.log('Completed!! '+res);
