@@ -16,5 +16,3 @@ client.set('json', json, function(err, reply) {
 client.get('json', function(err, reply) {
   console.log(reply);
 });
-
-console.log('Completed!! '+res);
